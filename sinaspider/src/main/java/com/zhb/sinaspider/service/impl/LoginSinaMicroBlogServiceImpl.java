@@ -23,8 +23,6 @@ public class LoginSinaMicroBlogServiceImpl implements ILoginSinaMicroBlogService
 
 	// 登录账号和密码
 	private String username;
-//	private String username = "15755187277";
-//	private String pwd = "wuli@sina1";
 	private String pwd ;
 
 
