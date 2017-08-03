@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+<bean id="entrance" class="com.zhb.sinaspider.ui.Entrance">
+
+		<constructor-arg index="0" value="crawler_info"/>
+		<constructor-arg index="1" value="true"/>
+		
+		
+		<property name="seed">
+			<value>https://weibo.cn/zhangyumaths</value>
+		</property>	
+		
+		<property name="loginService" ref="loginService"/>
+		<property name="crawlerService" ref="crawlerService"/>
+			
+</bean>
+
+<bean id="loginService" class="com.zhb.sinaspider.service.impl.LoginSinaMicroBlogServiceImpl">
+	<property name="username" value="15755187277"/>
+	<property name="pwd" value="wuli@sina1"/>
+</bean>
+
+<bean id="crawlerService" class="com.zhb.sinaspider.service.impl.CrawlerByUserIDImpl">
+	<property name="loginSinaMicroBlogService" ref="loginService"></property>
+</bean>
+
+</beans>
