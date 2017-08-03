@@ -30,8 +30,8 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 </bean>
 
 <bean id="loginService" class="com.zhb.sinaspider.service.impl.LoginSinaMicroBlogServiceImpl">
-	<property name="username" value="15755187277"/>
-	<property name="pwd" value="wuli@sina1"/>
+	<property name="username" value=""/>
+	<property name="pwd" value=""/>
 </bean>
 
 <bean id="crawlerService" class="com.zhb.sinaspider.service.impl.CrawlerByUserIDImpl">
